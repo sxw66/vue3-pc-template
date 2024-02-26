@@ -1,0 +1,258 @@
+// 暗黑模式自定义样式
+html.dark {
+  /* 自定义深色背景颜色 */
+
+  --el-bg-color: #141414;
+  --el-bg-color-overlay: #1d1e1f;
+
+  --ad-bg-color-deep: #191919;
+  --ad-bg-color-shallow: #000000cc;
+
+  --ad-border-light: 1px solid #4c4d4f;
+  --el-icon-color: #bfcbd9;
+  body {
+    background: none;
+  }
+
+  // 编辑器
+  .w-e-toolbar,
+  .w-e-text-container,
+  .w-e-menu-panel {
+    background: none !important;
+  }
+  // 富文本
+  .md {
+    background: none !important;
+  }
+
+  #app {
+    .sidebar-container {
+      background: var(--el-bg-color) !important;
+    }
+  }
+  // 菜单
+  #app {
+    .el-menu {
+      background-color: var(--el-bg-color) !important;
+    }
+    .el-menu .el-sub-menu > .el-sub-menu__title,
+    .el-sub-menu .el-menu-item {
+      background-color: var(--el-bg-color) !important;
+
+      &:hover {
+        background-color: var(--ad-bg-color-shallow) !important;
+      }
+      &.is-active {
+        background-color: #060708 !important;
+      }
+    }
+  }
+  // 弹出的子级菜单
+  .el-menu--popup {
+    background-color: var(--ad-bg-color-deep) !important;
+  }
+  // 子菜单样式
+  .el-menu-item {
+    background-color: var(--ad-bg-color-deep) !important;
+  }
+  // 子菜单悬浮样式
+  .el-menu-item:hover {
+    background-color: var(--ad-bg-color-shallow) !important;
+  }
+
+  .sidebar-logo-container {
+    background: none;
+    box-sizing: border-box;
+    border: var(--ad-border-light);
+  }
+  .el-drawer__header {
+    span {
+      color: var(--el-text-color-primary) !important;
+    }
+  }
+  .theme-item {
+    color: var(--el-text-color-primary) !important;
+  }
+
+  .el-table__header th {
+    font-weight: bold;
+    color: white;
+  }
+  .footer-layout {
+    background: none;
+    color: white;
+  }
+  // 属性表格
+  .ad-pro-table {
+    .header {
+      background: none !important;
+      border: var(--ad-border-light);
+    }
+    .footer {
+      background: none !important;
+      border: var(--ad-border-light);
+    }
+    .el-table__header th {
+      color: white !important;
+    }
+  }
+
+  // header
+  .m-layout-header {
+    color: var(--el-text-color-primary) !important;
+    .header-inner {
+      background-color: var(--el-bg-color) !important;
+      border-bottom: var(--ad-border-light) !important;
+      .header-icon {
+        color: var(--el-icon-color) !important;
+      }
+    }
+  }
+  // tagviews
+  .base-tags-view-box {
+    background: var(--el-bg-color) !important;
+    border: var(--ad-border-light);
+    border-top: none;
+    border-left: none;
+    box-sizing: border-box;
+    .el-tabs--card > .el-tabs__header {
+      border-bottom: none !important;
+    }
+  }
+
+  // 内容区
+  .app-main {
+    .app-container {
+      .header {
+        background: none;
+      }
+      .footer {
+        background: none;
+      }
+    }
+    .m-container-layout {
+      .m-container-layout-inner {
+        background: none;
+        color: var(--el-text-color-primary) !important;
+      }
+    }
+
+    .item-group-item {
+      background: none !important;
+      border: var(--ad-border-light);
+      color: #cccccc;
+    }
+
+    .app-container-inner {
+      background: none;
+    }
+  }
+
+  // 底部
+  .footer-layout {
+    border-top: var(--ad-border-light);
+  }
+
+  // 登录
+  .login-container {
+    background-color: var(--ad-bg-color-deep) !important;
+    .login-box {
+      background-color: var(--ad-bg-color-shallow) !important;
+      .login-form {
+        background-color: var(--el-bg-color) !important;
+        .title {
+          color: var(--el-text-color-primary) !important;
+        }
+      }
+    }
+    .info-qrcode {
+      background: white;
+    }
+  }
+
+  .el-scrollbar {
+    border: var(--ad-border-light);
+    border-top: none;
+    background-color: var(--ad-bg-color-deep) !important;
+  }
+  // 右侧主题配置
+  .m-setting-fix {
+    border: var(--ad-border-light) !important;
+    background-color: var(--ad-bg-color-deep) !important;
+    .item-child {
+      background-color: var(--ad-bg-color-shallow) !important;
+    }
+  }
+
+  // 混合模式
+  .layout-mix-box {
+    .layout-top-box {
+      background-color: var(--ad-bg-color-deep) !important;
+      .header-nav .el-scrollbar {
+        border: none;
+      }
+    }
+    .layout-bottom-box {
+      .side-nav-sub {
+        border: none;
+        .el-scrollbar {
+          border: var(--ad-border-light) !important;
+          border-right: none !important;
+        }
+        .collapse-icon-bx {
+          background-color: var(--ad-bg-color-deep) !important;
+          border-left: var(--ad-border-light);
+          .hamburger-container {
+            color: var(--el-icon-color);
+          }
+        }
+      }
+      .main-right-box {
+        border: var(--ad-border-light) !important;
+      }
+    }
+  }
+  .m-headerSearch .header-icon,
+  .m-info .item-info-pop .header-icon,
+  .m-screenful,
+  .m-setting .header-icon {
+    color: var(--el-icon-color) !important;
+  }
+  // 分栏模式
+  .main-columns {
+    .layout-columns-aside {
+      background-color: var(--ad-bg-color-deep) !important;
+      .el-scrollbar {
+        border: var(--ad-border-light) !important;
+        height: calc(100vh - 52px);
+      }
+    }
+    .layout-columns-sub {
+      border: none !important;
+      border-bottom: var(--ad-border-light) !important;
+      .logo {
+        background-color: var(--ad-bg-color-deep) !important;
+        color: #fff;
+        border: none;
+      }
+      .el-scrollbar {
+        border: var(--ad-border-light) !important;
+        border-left: none !important;
+      }
+    }
+    .container {
+      // border-top: none !important;
+      .layout-header {
+        background-color: var(--ad-bg-color-deep) !important;
+        .header-tool {
+          color: var(--el-icon-color) !important;
+          border-bottom: var(--ad-border-light) !important;
+        }
+      }
+    }
+  }
+  // 首页个人信息边框
+  .personal-information {
+    border: var(--ad-border-light) !important;
+  }
+}
