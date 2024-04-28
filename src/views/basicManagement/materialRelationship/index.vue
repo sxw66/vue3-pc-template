@@ -78,7 +78,13 @@
         label: '父物料编号',
         search: true,
         valueType: 'input',
-        span: 12,
+        width: 160,
+      },
+      {
+        name: 'materialNo',
+        label: '子物料编号',
+        search: true,
+        valueType: 'input',
         width: 160,
       },
       {
@@ -86,14 +92,6 @@
         label: '父物料名称',
         slot: true,
         width: 350,
-      },
-      {
-        name: 'materialNo',
-        label: '子物料编号',
-        search: true,
-        valueType: 'input',
-        span: 12,
-        width: 160,
       },
       {
         name: 'materialName',
@@ -229,30 +227,50 @@
       materialNo: formParams.materialNo,
       parentMaterialNo: formParams.parentMaterialNo,
     }
-    const { data, code } = await GetMaterialList(parms)
-    if (code === 0) {
-      console.log('-表格列表数据', data)
-      tableInfo.list = data?.records || []
-      tableParams.value.total = data?.total || 0
-    }
+
+    // const { data, code } = await GetMaterialList(parms)
+    // if (code === 0) {
+    //   console.log('-表格列表数据', data)
+    //   tableInfo.list = data?.records || []
+    //   tableParams.value.total = data?.total || 0
+    // }
+    tableInfo.list = [
+      {
+        id:1,
+        parentMaterialNo: '12',
+      },
+      {
+        id:2,
+        parentMaterialName: '无聊',
+      },
+      {
+        id:3,
+        materialNo: '345',
+      },
+      {
+        id:4,
+        materialName: '子物料名称',
+      },
+    ]
+    tableParams.value.total = 100
     tableInfo.loading = false
   }
 
   // 获取父成品列表列表数据
-  const GetParentProductListData = async () => {
-    let params = {
-      isInvolvedManHour: 1,
-      isLineUse: 0,
-    }
-    const { data, code } = await GetCascadeMaterialList(params)
-    console.log('-获取父成品列表列表数据', data)
-    parentMaterialNoList.value = data.filter((items) => items.type === 1)
-    childMaterialNoList.value = data.filter((items) => items.type === 2)
-  }
+  // const GetParentProductListData = async () => {
+  //   let params = {
+  //     isInvolvedManHour: 1,
+  //     isLineUse: 0,
+  //   }
+  //   const { data, code } = await GetCascadeMaterialList(params)
+  //   console.log('-获取父成品列表列表数据', data)
+  //   parentMaterialNoList.value = data.filter((items) => items.type === 1)
+  //   childMaterialNoList.value = data.filter((items) => items.type === 2)
+  // }
 
   // 初始化函数
   onMounted(async () => {
-    await GetParentProductListData()
+    // await GetParentProductListData()
     await getTableData()
   })
 </script>
