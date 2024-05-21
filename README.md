@@ -25,7 +25,7 @@ vue-admin-template 是一个后台前端解决方案,它使用了最新的前端
 
 ```js
   # Gitlab
-  git clone git@gitlab.3irobotix.net:aiot/components-library/vue-admin-template.git
+  git clone https://github.com/sxw66/vue3-pc-template.git
 ```
 
 ## 分支管理
